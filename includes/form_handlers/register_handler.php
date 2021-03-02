@@ -32,7 +32,7 @@ if(isset($_POST['register_button'])){
   //email2
   $em2 = strip_tags($_POST['reg_email2']); //remove html tags
   $em2 = str_replace(' ', '', $em2);    //remove spaces
-  $em2 = strtolower($em2);   //convert to lower case, 
+  $em2 = strtolower($em2);   //convert to lower case,
   $_SESSION['reg_email2'] = $em2; //store into session
 
   //password
@@ -104,13 +104,13 @@ if(isset($_POST['register_button'])){
     $rand = rand(1,2);
     switch ($rand) {
       case 1:
-        $profile_pic = "Assets/Images/profile_pics/default_profile_pic.png";
+        $profile_pic = "Assets/Images/profile_pics/defaults/default_profile_pic.png";
         break;
         case 2:
-        $profile_pic = "Assets/Images/profile_pics/default_profile_pic1.png";
+        $profile_pic = "Assets/Images/profile_pics/defaults/default_profile_pic1.png";
         break;
       default:
-        $profile_pic = "Assets/Images/profile_pics/default_profile_pic1.png";
+        $profile_pic = "Assets/Images/profile_pics/defaults/default_profile_pic1.png";
       }
 
     $query = mysqli_query($con, "INSERT INTO users VALUES (NULL, '$fname', '$lname', '$username', '$em', '$password', '$date', '$profile_pic', '0', '0', 'no', ',')");
